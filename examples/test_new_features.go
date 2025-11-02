@@ -16,10 +16,11 @@ func (t *testNewFeatures) Email() hermes.Email {
 				"This email demonstrates the new features:",
 				"- Icon displayed to the left of the product name",
 				"- Custom logo width (200px)",
+				"- Greeting is hidden (HideGreeting = true)",
 				"- Signature is hidden (HideSignature = true)",
 			},
 			Outros: []string{
-				"Notice that the signature line is not displayed below.",
+				"Notice that neither the greeting nor the signature line is displayed.",
 			},
 		},
 	}

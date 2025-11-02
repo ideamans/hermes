@@ -42,7 +42,20 @@ h := hermes.Hermes{
 }
 ```
 
-### 4. Hide Signature
+### 4. Hide Greeting
+
+Optionally hide the greeting line ("Hi, Name"):
+
+```go
+h := hermes.Hermes{
+    Product: hermes.Product{
+        Name:         "My Product",
+        HideGreeting: true, // Hides the greeting line
+    },
+}
+```
+
+### 5. Hide Signature
 
 Optionally hide the signature line ("Yours truly, ProductName"):
 
@@ -65,6 +78,7 @@ h := hermes.Hermes{
         Logo:          "https://example.com/logo.png",
         LogoWidth:     "200px",
         Icon:          "https://example.com/icon.png",
+        HideGreeting:  true,
         HideSignature: true,
     },
 }

@@ -54,6 +54,7 @@ type Product struct {
 	// (default to `If you're having trouble with the button '{ACTION}',
 	// copy and paste the URL below into your web browser.`)
 	TroubleText   string
+	HideGreeting  bool // Hide the greeting line (e.g. "Hi, Name")
 	HideSignature bool // Hide the signature line (e.g. "Yours truly, ProductName")
 }
 

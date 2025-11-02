@@ -17,7 +17,8 @@ Hermesは、トランザクショナルメール（ウェルカムメール、�
 1. **ヘッダーレイアウトの拡張**: ロゴ、プロダクト名、アイコンの柔軟な組み合わせ
 2. **ロゴ幅の指定**: `LogoWidth`フィールドでロゴの幅を指定可能
 3. **プロダクトアイコン**: `Icon`フィールドでプロダクト名の左にアイコンを表示
-4. **署名の非表示**: `HideSignature`フィールドで署名行を非表示に設定可能
+4. **挨拶文の非表示**: `HideGreeting`フィールドで挨拶行（"Hi, Name,"）を非表示に設定可能
+5. **署名の非表示**: `HideSignature`フィールドで署名行（"Yours truly, ProductName"）を非表示に設定可能
 
 詳細はREADME.mdを参照してください。
 
@@ -55,11 +56,13 @@ go run *.go
 
 **依存関係:**
 - Go 1.24.2+
-- `github.com/Masterminds/sprig` - テンプレート関数
+- `github.com/Masterminds/sprig/v3 v3.3.0` - テンプレート関数（v2からv3にアップグレード）
+- `dario.cat/mergo v1.0.1` - 構造体のマージ（旧github.com/imdario/mergoからの移行完了）
 - `github.com/russross/blackfriday/v2` - Markdown → HTML変換
 - `github.com/vanng822/go-premailer` - CSS インライン化
 - `github.com/jaytaylor/html2text` - HTML → プレーンテキスト変換
 - `github.com/stretchr/testify` - テスト用アサーション
+- `github.com/olekukonko/tablewriter v0.0.5` - テーブルレンダリング（v1.1.0は非互換のためv0.0.5に固定）
 
 ### コアアーキテクチャ
 

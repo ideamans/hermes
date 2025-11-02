@@ -325,7 +325,7 @@ func (dt *Default) HTMLTemplate() string {
                 <!-- Body content -->
                 <tr>
                   <td class="content-cell">
-                    <h1>{{if .Email.Body.Title }}{{ .Email.Body.Title }}{{ else }}{{ .Email.Body.Greeting }} {{ .Email.Body.Name }},{{ end }}</h1>
+                    {{ if .Email.Body.Title }}<h1>{{ .Email.Body.Title }}</h1>{{ else if not .Hermes.Product.HideGreeting }}<h1>{{ .Email.Body.Greeting }} {{ .Email.Body.Name }},</h1>{{ end }}
                     {{ with .Email.Body.Intros }}
                         {{ if gt (len .) 0 }}
                           {{ range $line := . }}
@@ -528,7 +528,7 @@ func (dt *Default) HTMLTemplate() string {
 
 // PlainTextTemplate returns a Golang template that will generate an plain text email.
 func (dt *Default) PlainTextTemplate() string {
-	return `<h2>{{if .Email.Body.Title }}{{ .Email.Body.Title }}{{ else }}{{ .Email.Body.Greeting }} {{ .Email.Body.Name }},{{ end }}</h2>
+	return `{{ if .Email.Body.Title }}<h2>{{ .Email.Body.Title }}</h2>{{ else if not .Hermes.Product.HideGreeting }}<h2>{{ .Email.Body.Greeting }} {{ .Email.Body.Name }},</h2>{{ end }}
 {{ with .Email.Body.Intros }}
   {{ range $line := . }}
     <p>{{ $line }}</p>

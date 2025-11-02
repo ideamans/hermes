@@ -37,6 +37,7 @@ func main() {
 			Logo:          "https://github.com/ideamans/hermes/blob/master/examples/gopher.png?raw=true",
 			LogoWidth:     "200px",
 			Icon:          "https://github.com/ideamans/hermes/blob/master/examples/gopher.png?raw=true",
+			HideGreeting:  true,
 			HideSignature: true,
 		},
 	}

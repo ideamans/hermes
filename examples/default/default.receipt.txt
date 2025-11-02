@@ -1,7 +1,3 @@
-------------
-Hi Jon Snow,
-------------
-
 Your order has been processed successfully.
 
 +--------+--------------------------------+--------+
