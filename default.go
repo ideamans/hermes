@@ -67,16 +67,15 @@ func (dt *Default) HTMLTemplate() string {
       max-height: 50px;
     }
     .email-product-name-wrapper {
-      margin-top: 10px;
       text-align: center;
     }
     .email-product-icon {
-      height: 16px;
+      height: 24px;
       vertical-align: middle;
-      margin-right: 5px;
+      margin-right: 8px;
     }
     .email-product-name-text {
-      font-size: 16px;
+      font-size: 28px;
       font-weight: bold;
       color: #2F3133;
       text-decoration: none;
@@ -305,8 +304,9 @@ func (dt *Default) HTMLTemplate() string {
                   </a>
                 </div>
               {{ end }}
-              {{ if .Hermes.Product.Name }}
-                <div class="email-product-name-wrapper">
+              {{ $showName := and .Hermes.Product.Name (ne .Hermes.Product.Name "Hermes") }}
+              {{ if $showName }}
+                <div class="email-product-name-wrapper" {{ if .Hermes.Product.Logo }}style="margin-top: 20px;"{{ end }}>
                   <a href="{{.Hermes.Product.Link}}" target="_blank" style="text-decoration: none;">
                     {{ if .Hermes.Product.Icon }}
                       <img src="{{.Hermes.Product.Icon | url }}" class="email-product-icon" />
