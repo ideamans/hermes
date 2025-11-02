@@ -1,4 +1,76 @@
-# Hermes
+# Hermes (Customized Version)
+
+> **Note**: This is a customized fork of the original [Hermes](https://github.com/matcornic/hermes) library with additional features for enhanced email header customization.
+
+## Additional Features
+
+This fork adds the following features to the original Hermes library:
+
+### 1. Enhanced Header Layout
+
+The email header now supports a flexible 3-element layout:
+
+- **Logo**: Displayed centered at the top (if provided)
+- **Product Name**: Displayed centered below the logo (if provided)
+- **Icon**: Displayed to the left of the product name (if provided)
+
+### 2. Logo Width Control
+
+You can now specify a custom width for the logo image:
+
+```go
+h := hermes.Hermes{
+    Product: hermes.Product{
+        Logo:      "https://example.com/logo.png",
+        LogoWidth: "200px", // Custom logo width
+    },
+}
+```
+
+### 3. Product Icon
+
+Add an icon that appears to the left of your product name:
+
+```go
+h := hermes.Hermes{
+    Product: hermes.Product{
+        Name: "My Product",
+        Icon: "https://example.com/icon.png", // Icon displayed left of name
+    },
+}
+```
+
+### 4. Hide Signature
+
+Optionally hide the signature line ("Yours truly, ProductName"):
+
+```go
+h := hermes.Hermes{
+    Product: hermes.Product{
+        Name:          "My Product",
+        HideSignature: true, // Hides the signature line
+    },
+}
+```
+
+### Complete Example
+
+```go
+h := hermes.Hermes{
+    Product: hermes.Product{
+        Name:          "My Product",
+        Link:          "https://example.com/",
+        Logo:          "https://example.com/logo.png",
+        LogoWidth:     "200px",
+        Icon:          "https://example.com/icon.png",
+        HideSignature: true,
+    },
+}
+```
+
+---
+
+# Original Hermes README
 
 [![Build Status](https://github.com/matcornic/hermes/actions/workflows/main.yml/badge.svg)](https://github.com/matcornic/hermes/actions/workflows/main.yml)
 [![Go Report Card](https://goreportcard.com/badge/github.com/matcornic/hermes)](https://goreportcard.com/report/github.com/matcornic/hermes)
