@@ -1,6 +1,8 @@
 # Hermes (Customized Version)
 
 > **Note**: This is a customized fork of the original [Hermes](https://github.com/matcornic/hermes) library with additional features for enhanced email header customization.
+>
+> **Repository**: https://github.com/ideamans/hermes
 
 ## Additional Features
 
@@ -88,18 +90,9 @@ It's a package that generates clean, responsive HTML e-mails for sending transac
 
 First install the package:
 
+```bash
+go get github.com/ideamans/hermes
 ```
-go get github.com/matcornic/hermes@v1.3.0
-```
-
-## Migrate back from `v2` to `v1.3.0`
-
-At the time of `v2` creation, Go modules logic and best practices were still unsure. v1 did not use modules.
-Having a dedicated `v2` module is meant to be used for projects hosting and maintaining `v1` and `v2` at the same time, so people can use both versions at the same time. There is no need for that in this kind of project.
-Now that go modules usage is standard, in `v1`, starting from `v1.3.0` tags, we decided to migrate back to `github.com/matcornic/hermes` instead of `github.com/matcornic/hermes/v2`.
-`v2` tags will still use `github.com/matcornic/hermes/v2` as the import path, normal way will use `github.com/matcornic/hermes` as the import path.
-
-So, just replace your import path from `github.com/matcornic/hermes/v2` to `github.com/matcornic/hermes` and run `go get github.com/matcornic/hermes@v1.3.0` (or newer) to update the dependency.
 
 ## Use Hermes
 

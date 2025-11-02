@@ -1,6 +1,6 @@
 package main
 
-import "github.com/matcornic/hermes"
+import "github.com/ideamans/hermes"
 
 type testNewFeatures struct{}
 

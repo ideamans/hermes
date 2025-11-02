@@ -11,7 +11,7 @@ import (
 	"github.com/go-gomail/gomail"
 	"golang.org/x/term"
 
-	"github.com/matcornic/hermes"
+	"github.com/ideamans/hermes"
 )
 
 var (
@@ -34,9 +34,9 @@ func main() {
 		Product: hermes.Product{
 			Name:          "Hermes",
 			Link:          "https://example-hermes.com/",
-			Logo:          "https://github.com/matcornic/hermes/blob/master/examples/gopher.png?raw=true",
+			Logo:          "https://github.com/ideamans/hermes/blob/master/examples/gopher.png?raw=true",
 			LogoWidth:     "200px",
-			Icon:          "https://github.com/matcornic/hermes/blob/master/examples/gopher.png?raw=true",
+			Icon:          "https://github.com/ideamans/hermes/blob/master/examples/gopher.png?raw=true",
 			HideSignature: true,
 		},
 	}

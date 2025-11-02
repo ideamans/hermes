@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/matcornic/hermes"
+	"github.com/ideamans/hermes"
 )
 
 type receipt struct {

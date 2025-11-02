@@ -2,9 +2,24 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Hermes - Transactional Email Generator
+## Hermes - Transactional Email Generator (Customized Version)
+
+**Repository**: https://github.com/ideamans/hermes
+
+これは[matcornic/hermes](https://github.com/matcornic/hermes)のカスタマイズ版です。
 
 Hermesは、トランザクショナルメール（ウェルカムメール、パスワードリセット、レシートなど）のクリーンでレスポンシブなHTML/プレーンテキストを生成するGoパッケージです。Node.jsの[mailgen](https://github.com/eladnava/mailgen)のGoポート版です。
+
+### カスタマイズ内容
+
+このフォークでは以下の機能が追加されています：
+
+1. **ヘッダーレイアウトの拡張**: ロゴ、プロダクト名、アイコンの柔軟な組み合わせ
+2. **ロゴ幅の指定**: `LogoWidth`フィールドでロゴの幅を指定可能
+3. **プロダクトアイコン**: `Icon`フィールドでプロダクト名の左にアイコンを表示
+4. **署名の非表示**: `HideSignature`フィールドで署名行を非表示に設定可能
+
+詳細はREADME.mdを参照してください。
 
 ### 開発コマンド
 
