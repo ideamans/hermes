@@ -1,0 +1,15 @@
+-------------
+Hi Test User,
+-------------
+
+This email demonstrates the new features:
+
+- Icon displayed to the left of the product name
+
+- Custom logo width (200px)
+
+- Signature is hidden (HideSignature = true)
+
+Notice that the signature line is not displayed below.
+
+Copyright © 2025 Hermes. All rights reserved.

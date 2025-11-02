@@ -47,11 +47,14 @@ type Product struct {
 	Name      string
 	Link      string // e.g. https://matcornic.github.io
 	Logo      string // e.g. https://matcornic.github.io/img/logo.png
+	LogoWidth string // e.g. "200px" - width of the logo image (optional)
+	Icon      string // e.g. https://matcornic.github.io/img/icon.png - icon displayed left of product name
 	Copyright string // Copyright © 2019 Hermes. All rights reserved.
 	// TroubleText is the sentence at the end of the email for users having trouble with the button
-	// (default to `If you’re having trouble with the button '{ACTION}',
+	// (default to `If you're having trouble with the button '{ACTION}',
 	// copy and paste the URL below into your web browser.`)
-	TroubleText string
+	TroubleText   string
+	HideSignature bool // Hide the signature line (e.g. "Yours truly, ProductName")
 }
 
 // Email is the email containing a body

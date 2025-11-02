@@ -67,6 +67,23 @@ func (dt *Flat) HTMLTemplate() string {
     .email-logo {
       max-height: 50px;
     }
+    .email-product-name-wrapper {
+      margin-top: 10px;
+      text-align: center;
+    }
+    .email-product-icon {
+      height: 16px;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+    .email-product-name-text {
+      font-size: 16px;
+      font-weight: bold;
+      color: #2F3133;
+      text-decoration: none;
+      text-shadow: 0 1px 0 white;
+      vertical-align: middle;
+    }
     /* Body ------------------------------ */
     .email-body {
       width: 100%;
@@ -282,13 +299,23 @@ func (dt *Flat) HTMLTemplate() string {
           <!-- Logo -->
           <tr>
             <td class="email-masthead">
-              <a class="email-masthead_name" href="{{.Hermes.Product.Link}}" target="_blank">
-                {{ if .Hermes.Product.Logo }}
-                  <img src="{{.Hermes.Product.Logo | url }}" class="email-logo" />
-                {{ else }}
-                  {{ .Hermes.Product.Name }}
-                {{ end }}
-                </a>
+              {{ if .Hermes.Product.Logo }}
+                <div style="text-align: center;">
+                  <a href="{{.Hermes.Product.Link}}" target="_blank">
+                    <img src="{{.Hermes.Product.Logo | url }}" class="email-logo" {{ with .Hermes.Product.LogoWidth }}style="width: {{ . }};"{{ end }} />
+                  </a>
+                </div>
+              {{ end }}
+              {{ if .Hermes.Product.Name }}
+                <div class="email-product-name-wrapper">
+                  <a href="{{.Hermes.Product.Link}}" target="_blank" style="text-decoration: none;">
+                    {{ if .Hermes.Product.Icon }}
+                      <img src="{{.Hermes.Product.Icon | url }}" class="email-product-icon" />
+                    {{ end }}
+                    <span class="email-product-name-text">{{ .Hermes.Product.Name }}</span>
+                  </a>
+                </div>
+              {{ end }}
             </td>
           </tr>
 
@@ -436,7 +463,7 @@ func (dt *Flat) HTMLTemplate() string {
                       {{ end }}
 
                     {{ end }}
-                    {{ with .Email.Body.Outros }} 
+                    {{ with .Email.Body.Outros }}
                         {{ if gt (len .) 0 }}
                           {{ range $line := . }}
                             <p>{{ $line }}</p>
@@ -444,11 +471,13 @@ func (dt *Flat) HTMLTemplate() string {
                         {{ end }}
                       {{ end }}
 
+                    {{ if not .Hermes.Product.HideSignature }}
                     <p>
                       {{.Email.Body.Signature}},
                       <br />
                       {{.Hermes.Product.Name}}
                     </p>
+                    {{ end }}
 
                     {{ if (eq .Email.Body.FreeMarkdown "") }}
                       {{ with .Email.Body.Actions }} 
@@ -550,13 +579,14 @@ func (dt *Flat) PlainTextTemplate() string {
     {{ end }}
   {{ end }}
 {{ end }}
-{{ with .Email.Body.Outros }} 
+{{ with .Email.Body.Outros }}
   {{ range $line := . }}
     <p>{{ $line }}<p>
   {{ end }}
 {{ end }}
+{{ if not .Hermes.Product.HideSignature }}
 <p>{{.Email.Body.Signature}},<br>{{.Hermes.Product.Name}} - {{.Hermes.Product.Link}}</p>
-
+{{ end }}
 <p>{{.Hermes.Product.Copyright}}</p>
 `
 }

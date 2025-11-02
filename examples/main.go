@@ -32,9 +32,12 @@ func main() {
 
 	h := hermes.Hermes{
 		Product: hermes.Product{
-			Name: "Hermes",
-			Link: "https://example-hermes.com/",
-			Logo: "https://github.com/matcornic/hermes/blob/master/examples/gopher.png?raw=true",
+			Name:          "Hermes",
+			Link:          "https://example-hermes.com/",
+			Logo:          "https://github.com/matcornic/hermes/blob/master/examples/gopher.png?raw=true",
+			LogoWidth:     "200px",
+			Icon:          "https://github.com/matcornic/hermes/blob/master/examples/gopher.png?raw=true",
+			HideSignature: true,
 		},
 	}
 	sendEmails := os.Getenv("HERMES_SEND_EMAILS") == "true"
@@ -45,6 +48,7 @@ func main() {
 		new(receipt),
 		new(maintenance),
 		new(inviteCode),
+		new(testNewFeatures),
 	}
 
 	themes := []hermes.Theme{
